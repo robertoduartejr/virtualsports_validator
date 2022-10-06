@@ -20,7 +20,7 @@ tab_email.send_keys(os.getenv("EMAIL"))
 tab_senha = driver.find_element(By.XPATH, '//*[@id="loginForm"]/div[2]/div/input')
 tab_senha.send_keys(os.getenv("SENHA"))
 
-#trick to bypass "I'm not a robot" captcha
+#trick to bypass "I'm not a robot" captcha...
 WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it((By.XPATH,"//iframe[@title='reCAPTCHA']")))
 WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.recaptcha-checkbox-border"))).click()
 time.sleep(5)
